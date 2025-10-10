@@ -1,3 +1,5 @@
+* [Ссылка на образ](https://hub.docker.com/repository/docker/ohmykir/image-lab/tags/ca0ab8ee)
+
 * Вывод docker history ohmykir/image-lab:ca0ab8ee :
   <img width="790" height="373" alt="history" src="https://github.com/user-attachments/assets/9e137d65-dbe1-47f5-af64-dded0c25aebd" />
 * Чем эта сборка лучше "наивной":
