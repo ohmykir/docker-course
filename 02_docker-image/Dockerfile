@@ -23,8 +23,12 @@ LABEL org.lab.login="${LAB_LOGIN}" \
 
 USER appuser
 
+RUN mkdir -p /tmp/gunicorn && chown appuser:appgroup /tmp/gunicorn
+
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-ENTRYPOINT ["python", "-m", "app.app"]
-#ENTRYPOINT ["gunicorn", "--bind", "localhost:8080", "app.app:app"]
+STOPSIGNAL SIGTERM
+
+#ENTRYPOINT ["python", "-m", "app.app"]
+ENTRYPOINT ["gunicorn", "--bind", "localhost:8080", "app.app:app"]
